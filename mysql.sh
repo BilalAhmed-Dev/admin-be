@@ -18,8 +18,8 @@ sudo mysql -u root -p"$DATABASE_PASS" -e "DELETE FROM mysql.user WHERE User=''"
 sudo mysql -u root -p"$DATABASE_PASS" -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%'"
 sudo mysql -u root -p"$DATABASE_PASS" -e "FLUSH PRIVILEGES"
 sudo mysql -u root -p"$DATABASE_PASS" -e "create database admin_panel_db"
-sudo mysql -u root -p"$DATABASE_PASS" -e "grant all privileges on admin_panel_db.* TO 'admin'@'localhost' identified by 'root'"
-sudo mysql -u root -p"$DATABASE_PASS" -e "grant all privileges on admin_panel_db.* TO 'admin'@'%' identified by 'root'"
+sudo mysql -u root -p"$DATABASE_PASS" -e "grant all privileges on admin_panel_db.* TO 'admin'@'localhost' identified by '123456'"
+sudo mysql -u root -p"$DATABASE_PASS" -e "grant all privileges on admin_panel_db.* TO 'admin'@'%' identified by '123456'"
 sudo mysql -u root -p"$DATABASE_PASS" admin_panel_db < /tmp/vprofile-project/src/main/resources/db_backup.sql
 sudo mysql -u root -p"$DATABASE_PASS" -e "FLUSH PRIVILEGES"
 
